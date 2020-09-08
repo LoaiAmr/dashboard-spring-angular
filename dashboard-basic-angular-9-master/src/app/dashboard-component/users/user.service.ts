@@ -27,4 +27,9 @@ export class UserService {
         return this.users.find(user => user.userId == userId);
       }
 
+      public addUser(newUser: User) {
+        this.users.push(newUser);
+        this.userChanged.next(this.users.slice());
+    }
+
 }

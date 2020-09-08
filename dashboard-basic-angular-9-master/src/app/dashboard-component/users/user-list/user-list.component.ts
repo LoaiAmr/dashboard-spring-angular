@@ -3,7 +3,7 @@ import { UserDataStorage } from '../user.datastorage';
 import { UserService } from '../user.service';
 import { User } from '../user.model';
 import { MatDialog } from '@angular/material';
-import { UserEditComponent } from '../user-edit/user-edit.component';
+import { UserAddComponent } from '../user-add/user-add.component';
 
 @Component({
   selector: 'app-user-list',
@@ -33,9 +33,8 @@ export class UserListComponent implements OnInit {
   }
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(UserEditComponent, {
+    const dialogRef = this.dialog.open(UserAddComponent, {
       width: '700px',
-      data: { name: this.name, animal: this.animal }
     });
 
     dialogRef.afterClosed().subscribe(result => {

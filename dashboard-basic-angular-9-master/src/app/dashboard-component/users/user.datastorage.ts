@@ -33,4 +33,11 @@ export class UserDataStorage {
     getUserById(userId: number) {
         return this.http.get<User>(this.usersUrl + '/' + userId);
     }
+
+    saveUser(newUser: User) {
+        this.http.post<User>(this.usersUrl, newUser).subscribe(user => {
+            this.userService.addUser(user);
+        });;
+    }
+
 }

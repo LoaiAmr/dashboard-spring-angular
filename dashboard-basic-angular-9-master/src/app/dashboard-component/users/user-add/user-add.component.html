@@ -1,0 +1,57 @@
+<h1 mat-dialog-title>Add New User</h1>
+
+<form (ngSubmit)="onSubmit(userForm)" #userForm="ngForm">
+  <div mat-dialog-content>
+
+    <mat-form-field>
+    <p>Username:</p>
+      <input 
+          matInput tabindex="1" 
+          type="text" 
+          id="username" 
+          name="username"
+          ngModel
+          required>
+
+    </mat-form-field>
+
+    <p>Email:</p>
+    <mat-form-field>
+      <input 
+          matInput tabindex="2" 
+          type="text" 
+          id="email" 
+          name="email"
+          ngModel
+          required>
+    </mat-form-field>
+
+    <p>Password:</p>
+    <mat-form-field>
+      <input 
+          matInput tabindex="3" 
+          type="password" 
+          id="password" 
+          name="password"
+          ngModel
+          required>
+    </mat-form-field>
+
+    <p>role:</p>
+    <mat-form-field>
+      <input 
+          matInput tabindex="4" 
+          type="text" 
+          id="role" 
+          name="role"
+          ngModel
+          required="required"> 
+      </mat-form-field> 
+
+  </div>
+
+  <div mat-dialog-actions>
+    <button [disabled]="!userForm.valid" mat-button tabindex="5" type="submit">Add</button>
+    <button type="button" mat-button (click)="onNoClick()" tabindex="6">Cancel</button>
+  </div>
+<form>

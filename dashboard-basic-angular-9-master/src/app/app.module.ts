@@ -18,6 +18,7 @@ import { DemoMaterialModule } from './demo-material-module';
 import { SharedModule } from './shared/shared.module';
 import { SpinnerComponent } from './shared/spinner.component';
 import { UserEditComponent } from './dashboard-component/users/user-edit/user-edit.component';
+import { UserAddComponent } from './dashboard-component/users/user-add/user-add.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { UserEditComponent } from './dashboard-component/users/user-edit/user-ed
     SpinnerComponent,
     AppSidebarComponent,
     UserEditComponent,
+    UserAddComponent,
   ],
   imports: [
     BrowserModule,

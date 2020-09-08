@@ -7,6 +7,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -32,6 +34,12 @@ public class UserController {
 		User user = userRepository.findById(userId).orElseThrow(() -> new Exception("User not found on :: " + userId));
 		return ResponseEntity.ok(user);
 
+	}
+
+	@PostMapping("/users")
+	public ResponseEntity<User> createShoppinglist(@RequestBody User newUser) {
+		User user = userRepository.save(newUser);
+		return ResponseEntity.ok(user);
 	}
 
 }
